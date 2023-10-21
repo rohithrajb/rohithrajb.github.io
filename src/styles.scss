@@ -1,4 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
+// customized colors
+$theme-colors: (
+  "primary": #607B96,
+  "dark": #011627,
+  "lines": #1e2d3d,
+  "green": #198731,
+  "red": #C11313,
+  "orange": #FFA439,
+);
+
+
+
 // this should be below everything
 @import "node_modules/bootstrap/scss/bootstrap";
+
+
+// font customization
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+:root {
+  --bs-body-font-family: 'Fira Code', monospace;
+}
