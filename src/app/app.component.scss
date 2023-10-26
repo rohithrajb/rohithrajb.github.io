@@ -1,3 +1,20 @@
-.activehe {
+a {
+  color: #607B96;
+  padding: 0 !important;
+}
+
+.nav-item.active {
   border-bottom: 0.1rem solid orange !important;
 }
+
+.nav-link:hover {
+  color: #fea55f;
+}
+
+//@media screen and (max-width: 768px)
+//.navbar_menuBtn__g6HGV {
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//}
+
