@@ -1,0 +1,49 @@
+/* NavLink automatically looks for a .active class */
+.active {
+   @apply border-b-2 border-b-orange-300;
+}
+
+a {
+   @apply px-5 py-2 border-r border-border cursor-pointer;
+}
+
+a:hover {
+   @apply text-orange-300 transition duration-300;
+}
+
+a:last-child {
+   @apply absolute right-0 border-l border-border border-r-0;
+}
+
+ul {
+   @apply flex;
+}
+
+.menu {
+   @apply hidden absolute top-3 right-3 flex-col justify-between;
+}
+
+.menu span {
+   @apply h-2 w-full;
+}
+
+@media (max-width: 768px) {
+   .menu {
+      @apply flex 
+   }
+
+   nav {
+      @apply flex-col items-start
+   }
+
+   ul {
+      @apply hidden flex-col w-full mb-1
+   }
+
+   .open {
+      @apply flex-col
+   }
+
+   
+
+}
