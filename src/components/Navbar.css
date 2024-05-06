@@ -1,18 +1,18 @@
-/* NavLink automatically looks for a .active class */
-.active {
+/* <NavLink> automatically looks for a .active class */
+ul .active {
    @apply border-b-2 border-b-orange-300;
 }
 
-a {
-   @apply px-5 py-2 border-r border-border cursor-pointer;
+ul a {
+   @apply px-5 py-2 border-r border-border;
 }
 
-a:hover {
+ul a:hover {
    @apply text-orange-300 transition duration-300;
 }
 
-a:last-child {
-   @apply absolute right-0 border-l border-border border-r-0;
+ul a:last-child {
+   @apply absolute right-0 border-l border-l-border border-r-0;
 }
 
 ul {
@@ -20,30 +20,36 @@ ul {
 }
 
 .menu {
-   @apply hidden absolute top-3 right-3 flex-col justify-between;
+   @apply hidden absolute right-3 top-2;
 }
 
-.menu span {
-   @apply h-2 w-full;
+/* styles that should apply when width is > 768 px */
+@media (min-width: 768px) {
+   button {
+      display: none !important;
+   }
 }
 
+/* styles that should apply when width is < 768 px */
 @media (max-width: 768px) {
-   .menu {
-      @apply flex 
-   }
-
-   nav {
-      @apply flex-col items-start
-   }
-
    ul {
-      @apply hidden flex-col w-full mb-1
+      @apply hidden
    }
 
-   .open {
-      @apply flex-col
+   /* '!' makes a style important */
+   button {
+      @apply !ml-auto
    }
 
-   
+   div a {
+      @apply p-2 border-b border-main
+   }
 
+   div a:last-child {
+      @apply border-0
+   }
+
+   div .active {
+      @apply text-orange-400
+   }
 }
