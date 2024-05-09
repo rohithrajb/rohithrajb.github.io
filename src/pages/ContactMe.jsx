@@ -1,20 +1,13 @@
-import { React, useRef, useState } from 'react'
+import { React, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-   faCaretDown,
-   faCaretRight,
-   faEnvelope,
-   faPhone,
-   faLink,
-} from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhone, faLink } from '@fortawesome/free-solid-svg-icons'
 import './ContactMe.css'
 import emailjs from '@emailjs/browser'
+import Sidebar from '../components/Sidebar'
+import SidebarSection from '../components/SidebarSection'
 
 const ContactMe = () => {
    const form = useRef()
-
-   const [contactsOpen, setContactsOpen] = useState(true)
-   const [socialsOpen, setSocialsOpen] = useState(true)
 
    const socials = [
       ['github-profile', 'github.com/rohithrajb'],
@@ -22,6 +15,7 @@ const ContactMe = () => {
       ['leetcode-profile', 'leetcode.com/u/rohithrajb/'],
    ]
 
+   // emailJs
    const sendMail = (e) => {
       e.preventDefault()
 
@@ -41,20 +35,8 @@ const ContactMe = () => {
 
    return (
       <div className='flex'>
-         <div className='flex flex-col w-72'>
-            <div className='flex flex-col text-white transition duration-300 hover:text-green-300'>
-               <div
-                  className='flex p-2 items-center border-b border-border cursor-pointer'
-                  onClick={() => setContactsOpen((contactsOpen) => !contactsOpen)}>
-                  {contactsOpen ? (
-                     <FontAwesomeIcon icon={faCaretDown} className='text-sm' />
-                  ) : (
-                     <FontAwesomeIcon icon={faCaretRight} className='text-sm' />
-                  )}
-                  <p className='ml-3'>contacts</p>
-               </div>
-            </div>
-            {contactsOpen && (
+         <Sidebar>
+            <SidebarSection sectionName='contacts'>
                <div className='p-2 text-sm border-b border-border'>
                   <a href='mailto:rohithrajb@gmail.com' className='details'>
                      <FontAwesomeIcon icon={faEnvelope} />
@@ -65,20 +47,8 @@ const ContactMe = () => {
                      <p className='ml-2'>+91 7032531747</p>
                   </a>
                </div>
-            )}
-            <div className='flex flex-col text-white transition duration-300 hover:text-green-300'>
-               <div
-                  className='flex p-2 items-center border-b border-border cursor-pointer'
-                  onClick={() => setSocialsOpen((socialsOpen) => !socialsOpen)}>
-                  {socialsOpen ? (
-                     <FontAwesomeIcon icon={faCaretDown} className='text-sm' />
-                  ) : (
-                     <FontAwesomeIcon icon={faCaretRight} className='text-sm' />
-                  )}
-                  <p className='ml-3'>find-me-on</p>
-               </div>
-            </div>
-            {socialsOpen && (
+            </SidebarSection>
+            <SidebarSection sectionName='find-me-on'>
                <div className='p-2 border-b border-border'>
                   {socials.map((social, i) => (
                      <a
@@ -91,12 +61,9 @@ const ContactMe = () => {
                      </a>
                   ))}
                </div>
-            )}
-         </div>
-         <form
-            ref={form}
-            className='border-l border-border page-height p-14'
-            onSubmit={sendMail}>
+            </SidebarSection>
+         </Sidebar>
+         <form ref={form} className='page-height p-14' onSubmit={sendMail}>
             <div>
                <label htmlFor='name'>_your-name:</label>
                <input type='text' name='from_name' id='name' required />
@@ -107,7 +74,12 @@ const ContactMe = () => {
             </div>
             <div>
                <label htmlFor='message'>_message:</label>
-               <textarea name='message' id='message' rows={7} cols={40} required></textarea>
+               <textarea
+                  name='message'
+                  id='message'
+                  rows={7}
+                  cols={40}
+                  required></textarea>
             </div>
             <button type='submit'>send-message</button>
          </form>
