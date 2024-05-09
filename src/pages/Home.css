@@ -1,0 +1,22 @@
+.page-height {
+   height: calc(100vh - 43px);
+}
+
+@media (max-width: 900px) {
+   .name {
+      @apply text-5xl
+   }
+
+   .title {
+      @apply text-2xl mb-6
+   }
+
+   .github {
+      @apply hidden
+   }
+
+   .game {
+      @apply hidden
+   }
+   
+}

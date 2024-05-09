@@ -1,6 +1,6 @@
 /* <NavLink> automatically looks for a .active class */
 ul .active {
-   @apply border-b-2 border-b-orange-300;
+   @apply border-b-2 border-b-orange-400;
 }
 
 ul a {
@@ -8,7 +8,7 @@ ul a {
 }
 
 ul a:hover {
-   @apply text-orange-300 transition duration-300;
+   @apply text-orange-400 transition duration-500;
 }
 
 ul a:last-child {
@@ -25,7 +25,7 @@ ul {
 
 /* styles that should apply when width is > 768 px */
 @media (min-width: 768px) {
-   button {
+   nav button {
       display: none !important;
    }
 }
@@ -37,7 +37,7 @@ ul {
    }
 
    /* '!' makes a style important */
-   button {
+   nav button {
       @apply !ml-auto
    }
 

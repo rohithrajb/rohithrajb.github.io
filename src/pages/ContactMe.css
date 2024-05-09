@@ -1,0 +1,39 @@
+.page-height {
+   height: calc(100vh - 43px);
+}
+
+.details {
+   @apply flex items-center 
+}
+
+.details :hover {
+   @apply text-white transition duration-300
+}
+
+form div {
+   @apply flex flex-col mb-5
+}
+
+form div label {
+   @apply mb-3
+}
+
+form div input {
+   @apply !bg-[#011221] !rounded-lg !border-border
+}
+
+form div input:focus {
+   @apply !border-main !shadow-input !ring-0
+}
+
+form div textarea {
+   @apply bg-[#011221] rounded-lg border-border
+}
+
+form div textarea:focus {
+   @apply border-main shadow-input ring-0
+}
+
+form button {
+   @apply bg-slate-800 px-3 py-2 rounded-lg text-white text-sm transition-all duration-300 hover:bg-slate-700
+}
