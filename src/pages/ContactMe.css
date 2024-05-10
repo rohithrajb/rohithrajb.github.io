@@ -6,7 +6,7 @@
    @apply flex items-center 
 }
 
-.details :hover {
+.details:hover {
    @apply text-white transition duration-300
 }
 

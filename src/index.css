@@ -6,8 +6,7 @@
 
 @layer base {
     html {
-      @apply text-main;
+      @apply text-main font-mono;
       background-color: #011627;
-      @apply font-fira;
     }
 }

@@ -1,0 +1,3 @@
+.nav-active .active{
+   @apply text-white
+}

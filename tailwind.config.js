@@ -1,4 +1,6 @@
 const flowbite = require("flowbite-react/tailwind");
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -10,7 +12,7 @@ export default {
    theme: {
       extend: {
          fontFamily: {
-            'fira': "Fira Code, monospace"
+            mono: ['"Fira Code"', ...defaultTheme.fontFamily.mono],
          },
          colors: {
             'main': '#607B96',
