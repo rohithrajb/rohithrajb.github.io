@@ -16,7 +16,8 @@ export default {
          },
          colors: {
             'main': '#607B96',
-            'border': '#1e2d3d'
+            'border': '#1e2d3d',
+            'dark': '#011221'
          },
          boxShadow: {
             'input' : '0 0 0 2px rgba(96, 123, 150, .3)'
