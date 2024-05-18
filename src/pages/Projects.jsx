@@ -63,28 +63,17 @@ const Projects = () => {
                <div className='py-5 px-6 border-b border-border align-middle'>
                   {filters.map((filter) => (
                      <div key={filter.id} className='mb-4'>
-                        <label htmlFor={filter.id} className='align-middle cursor-pointer'>
+                        <label className='align-middle cursor-pointer'>
                            <input
                               type='checkbox'
                               id={filter.id}
                               className='checkbox rounded-sm text-sm bg-transparent border-2 mr-3 hover:shadow-input'
                            />
-                           <FontAwesomeIcon
-                              icon={filter.icon}
-                              className='mr-2 text-xl align-middle'
-                           />
+                           <FontAwesomeIcon icon={filter.icon} className='mr-2 text-xl align-middle' />
                            {filter.text}
                         </label>
                      </div>
                   ))}
-                  {/* <NavLink className='mt-2 details cursor-pointer' to='/about-me/skills'>
-                     <FontAwesomeIcon icon={faReact} className='text-green-400' />
-                     <p className='ml-2'>skills</p>
-                  </NavLink>
-                  <NavLink className='mt-2 details cursor-pointer' to='/about-me/experience'>
-                     <FontAwesomeIcon icon={faReact} className='text-teal-400' />
-                     <p className='ml-2'>experience</p>
-                  </NavLink> */}
                </div>
             </SidebarSection>
          </Sidebar>
