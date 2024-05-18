@@ -5,6 +5,7 @@ import './ContactMe.css'
 import emailjs from '@emailjs/browser'
 import Sidebar from '../components/Sidebar'
 import SidebarSection from '../components/SidebarSection'
+import { Link } from 'react-router-dom'
 
 const ContactMe = () => {
    const form = useRef()
@@ -38,27 +39,27 @@ const ContactMe = () => {
          <Sidebar>
             <SidebarSection sectionName='contacts'>
                <div className='p-2 text-sm border-b border-border'>
-                  <a href='mailto:rohithrajb@gmail.com' className='details'>
+                  <Link to='mailto:rohithrajb@gmail.com' className='details'>
                      <FontAwesomeIcon icon={faEnvelope} />
                      <p className='ml-2'>rohithrajb@gmail.com</p>
-                  </a>
-                  <a href='tel:7032531747' className='mt-1 details'>
+                  </Link>
+                  <Link to='tel:7032531747' className='mt-1 details'>
                      <FontAwesomeIcon icon={faPhone} />
                      <p className='ml-2'>+91 7032531747</p>
-                  </a>
+                  </Link>
                </div>
             </SidebarSection>
             <SidebarSection sectionName='find-me-on'>
                <div className='p-2 border-b border-border'>
                   {socials.map((social, i) => (
-                     <a
+                     <Link
                         key={i}
-                        href={'https://' + social[1]}
+                        to={'https://' + social[1]}
                         target='_blank'
                         className='details text-sm mb-1'>
                         <FontAwesomeIcon icon={faLink} className='text-xs' />
                         <p className='ml-2'>{social[0]}</p>
-                     </a>
+                     </Link>
                   ))}
                </div>
             </SidebarSection>

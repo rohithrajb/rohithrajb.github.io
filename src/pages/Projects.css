@@ -1,0 +1,25 @@
+.projects-list {
+   @apply px-32 py-16 grid grid-cols-2 gap-x-40 gap-y-10 overflow-auto;
+   height: calc(100vh - 42.4px);
+
+   /* Hide scrollbar for IE, Edge and Firefox */
+   -ms-overflow-style: none;  /* IE and Edge */
+   scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.projects-list::-webkit-scrollbar {
+   @apply hidden;
+}
+
+.checkbox:checked  {
+   @apply !bg-[#607b96];
+}
+
+.checkbox:focus {
+   box-shadow: none !important;
+}
+
+.texti {
+   @apply text-white
+}

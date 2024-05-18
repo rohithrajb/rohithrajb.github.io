@@ -1,7 +1,7 @@
 import React from 'react'
-import './Navbar.css'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Popover } from 'flowbite-react'
+import './Navbar.css'
 
 const Navbar = () => {
    // TODO: checking current path to highlight about-me in navbar is imo a workaround. find a legit solution for it

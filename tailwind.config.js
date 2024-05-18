@@ -20,7 +20,7 @@ export default {
             'dark': '#011221'
          },
          boxShadow: {
-            'input' : '0 0 0 2px rgba(96, 123, 150, .3)'
+            'input' : '0 0 0 2px #607b968b'
          }
       },
    },

@@ -1,51 +1,105 @@
 import React from 'react'
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 import SidebarSection from '../components/SidebarSection'
 import Project from '../components/Project'
-import './AboutMe.css'
+import './Projects.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faReact } from '@fortawesome/free-brands-svg-icons'
-import img from '../assets/ui-animations2.png'
+import {
+   faAngular,
+   faCss3,
+   faHtml5,
+   faJs,
+   faNode,
+   faNodeJs,
+   faReact,
+} from '@fortawesome/free-brands-svg-icons'
+import projectsData from '../projects.json'
+import { faDatabase } from '@fortawesome/free-solid-svg-icons'
 
 const Projects = () => {
-   const projects = [
+   const filters = [
       {
-         id: '1',
-         name: '_pathfinding-algo-visualizer',
-         description: 'Duis aute irure dolor in velit esse cillum dolore.'
-      }
+         id: 'react',
+         text: 'React',
+         icon: faReact,
+      },
+      {
+         id: 'angular',
+         text: 'Angular',
+         icon: faAngular,
+      },
+      {
+         id: 'node',
+         text: 'NodeJS',
+         icon: faNodeJs,
+      },
+      {
+         id: 'mongo',
+         text: 'MongoDB',
+         icon: faDatabase,
+      },
+      {
+         id: 'html',
+         text: 'HTML',
+         icon: faHtml5,
+      },
+      {
+         id: 'css',
+         text: 'CSS',
+         icon: faCss3,
+      },
+      {
+         id: 'javascript',
+         text: 'Javascript',
+         icon: faJs,
+      },
    ]
 
    return (
       <div className='flex'>
          <Sidebar>
             <SidebarSection sectionName='technologies-used'>
-               <div className='p-2 text-sm border-b border-border nav-active'>
-                  <NavLink className='details cursor-pointer' to='/pprojects/react'>
-                     <FontAwesomeIcon icon={faReact} className='text-orange-400' />
-                     <p className='ml-2'>ReactJS</p>
-                  </NavLink>
-                  <NavLink className='mt-2 details cursor-pointer' to='/about-me/skills'>
+               <div className='py-5 px-6 border-b border-border align-middle'>
+                  {filters.map((filter) => (
+                     <div key={filter.id} className='mb-4'>
+                        <label htmlFor={filter.id} className='align-middle cursor-pointer'>
+                           <input
+                              type='checkbox'
+                              id={filter.id}
+                              className='checkbox rounded-sm text-sm bg-transparent border-2 mr-3 hover:shadow-input'
+                           />
+                           <FontAwesomeIcon
+                              icon={filter.icon}
+                              className='mr-2 text-xl align-middle'
+                           />
+                           {filter.text}
+                        </label>
+                     </div>
+                  ))}
+                  {/* <NavLink className='mt-2 details cursor-pointer' to='/about-me/skills'>
                      <FontAwesomeIcon icon={faReact} className='text-green-400' />
                      <p className='ml-2'>skills</p>
                   </NavLink>
                   <NavLink className='mt-2 details cursor-pointer' to='/about-me/experience'>
                      <FontAwesomeIcon icon={faReact} className='text-teal-400' />
                      <p className='ml-2'>experience</p>
-                  </NavLink>
+                  </NavLink> */}
                </div>
             </SidebarSection>
          </Sidebar>
-         <div>
-            <Project projectImg={img} id={projects[0].id} name={projects[0].name} description={projects[0].description} />
+         <div className='projects-list'>
+            {projectsData.map((project) => (
+               <Project
+                  key={project.id}
+                  id={project.id}
+                  name={project.name}
+                  description={project.description}
+                  imageId={project.imageId}
+                  githubLink={project.link}
+               />
+            ))}
          </div>
-
-         {/* <Routes>
-            <Route path='/education' element={<Education />} />
-            <Route path='/skills' element={<Skills />} />
-            <Route path='/experience' element={<Experience />} />
-         </Routes> */}
       </div>
    )
 }

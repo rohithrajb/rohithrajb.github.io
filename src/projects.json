@@ -1,0 +1,40 @@
+[
+   {
+      "id": "1",
+      "name": "_task-tracker",
+      "description": "Angular, Express and MongoDB Task Tracker with JWT Authentication",
+      "tech": [ "HTML", "CSS", "Typescript", "Angular", "NodeJS", "Express", "MongoDB"],
+      "imageId": "Task-Tracker_pspmr3",
+      "link": "https://github.com/rohithrajb/task-tracker"
+   },
+   {
+      "id": "2",
+      "name": "_pathfinding-algo-visualizer",
+      "description": "Dijkstra's and A* Algorithm Visualizer made using React",
+      "tech": [ "HTML", "CSS", "Javascript", "ReactJS"],
+      "imageId": "Pathfinding_jiizhp",
+      "link": "https://github.com/rohithrajb/pathfinding-algo-visualizer"
+   },
+   {
+      "id": "3",
+      "name": "_expense-tracker",
+      "description": "Manage your expenses with this simple expense tracker",
+      "tech": [ "HTML", "CSS", "Javascript", "ReactJS", "NodeJS", "Express", "MongoDB"],
+      "imageId": "ui-animations2_h0iht2",
+      "link": "https://github.com/rohithrajb/expense-tracker"
+   },
+   {
+      "id": "4",
+      "name": "_task-tracker",
+      "description": "Duis aute irure dolor in velit esse cillum.",
+      "tech": [ "HTML", "CSS", "Typescript", "Angular", "NodeJS", "Express", "MongoDB"],
+      "imageId": "ui-animations2_h0iht2"
+   },
+   {
+      "id": "5",
+      "name": "_expense-tracker",
+      "description": "Duis aute irure dolor in velit esse cillum.",
+      "tech": [ "HTML", "CSS", "Javascript", "ReactJS", "NodeJS", "Express", "MongoDB"]
+   }
+
+]
