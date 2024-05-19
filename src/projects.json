@@ -11,7 +11,7 @@
       "id": "2",
       "name": "_pathfinding-algo-visualizer",
       "description": "Dijkstra's and A* Algorithm Visualizer made using React",
-      "tech": [ "HTML", "CSS", "Javascript", "ReactJS"],
+      "tech": [ "HTML", "CSS", "Javascript", "React"],
       "imageId": "Pathfinding_jiizhp",
       "link": "https://github.com/rohithrajb/pathfinding-algo-visualizer"
    },
@@ -19,22 +19,23 @@
       "id": "3",
       "name": "_expense-tracker",
       "description": "Manage your expenses with this simple expense tracker",
-      "tech": [ "HTML", "CSS", "Javascript", "ReactJS", "NodeJS", "Express", "MongoDB"],
+      "tech": [ "HTML", "CSS", "Javascript", "React", "NodeJS", "Express", "MongoDB"],
       "imageId": "ui-animations2_h0iht2",
       "link": "https://github.com/rohithrajb/expense-tracker"
    },
    {
       "id": "4",
-      "name": "_task-tracker",
-      "description": "Duis aute irure dolor in velit esse cillum.",
-      "tech": [ "HTML", "CSS", "Typescript", "Angular", "NodeJS", "Express", "MongoDB"],
+      "name": "_task-tracker-api",
+      "description": "Express and MongoDB Backend for the Task Tracker app.",
+      "tech": [ "NodeJS", "Express", "MongoDB"],
       "imageId": "ui-animations2_h0iht2"
    },
    {
       "id": "5",
-      "name": "_expense-tracker",
+      "name": "_portfolio",
       "description": "Duis aute irure dolor in velit esse cillum.",
-      "tech": [ "HTML", "CSS", "Javascript", "ReactJS", "NodeJS", "Express", "MongoDB"]
+      "tech": [ "HTML", "CSS", "Javascript", "React"],
+      "imageId": "ui-animations2_h0iht2"
    }
 
 ]

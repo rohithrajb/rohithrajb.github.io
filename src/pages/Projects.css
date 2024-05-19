@@ -20,6 +20,6 @@
    box-shadow: none !important;
 }
 
-.texti {
+.filter-active {
    @apply text-white
 }
