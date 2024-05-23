@@ -4,7 +4,7 @@ import SidebarSection from '../components/SidebarSection'
 import Project from '../components/Project'
 import './Projects.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngular, faCss3, faHtml5, faJs, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons'
+import { faAngular, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons'
 import projects from '../projects.json'
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'
 
@@ -31,19 +31,9 @@ const Projects = () => {
          icon: faDatabase,
       },
       {
-         id: 'html',
-         text: 'HTML',
-         icon: faHtml5,
-      },
-      {
-         id: 'css',
-         text: 'CSS',
-         icon: faCss3,
-      },
-      {
-         id: 'javascript',
-         text: 'Javascript',
-         icon: faJs,
+         id: 'express',
+         text: 'Express',
+         icon: faNodeJs,
       },
    ]
 
@@ -66,21 +56,22 @@ const Projects = () => {
 
    const filterProjects = () => {
       if (selectedFilters.length > 0) {
-         // console.log(filteredProjects)
-         let tempProjects = selectedFilters.map((eachFilter) => {
-            let temp = projects.filter((project) => project.tech.includes(eachFilter))
-            console.log(temp)
-            return temp
+         // let tempProjects = selectedFilters.map((eachFilter) => {
+         //    let temp = projects.filter((project) => project.tech.includes(eachFilter))
+         //    return temp
+         // })
+         let tempProjects = []
+         selectedFilters.map((eachFilter) => {
+            let temp = projects.filter(
+               (project) => !tempProjects.flat().includes(project) && project.tech.includes(eachFilter)
+            )
+            tempProjects.push(temp)
          })
-         // removeDuplicates(tempProjects.flat())
          setFilteredProjects(tempProjects.flat())
+      } else {
+         setFilteredProjects([...projects])
       }
    }
-
-   // so we got a lil diverted from out goal. we were adding all the projects into the filteredProjects list which were matching atleast 1 filter. that's not cool at all. we should display projects which match all the selected filters.
-
-   // TODO: complete the removeDuplicates function
-   const removeDuplicates = (nums) => {}
 
    return (
       <div className='flex'>

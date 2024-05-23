@@ -24,7 +24,7 @@ const Project = ({ project }) => {
             <AdvancedImage cldImg={myImage} className='rounded-t-2xl' />
             <div className='py-6 px-8'>
                <p className='mb-4'>{project.description}</p>
-               <Link to={project.githubLink} target='_blank' className='px-3 py-2 bg-[#1c2b3a] hover:bg-[#263b50] rounded-md text-white text-sm '>
+               <Link to={project.link} target='_blank' className='px-3 py-2 bg-[#1c2b3a] hover:bg-[#263b50] rounded-md text-white text-sm '>
                   view-project
                </Link>
             </div>
