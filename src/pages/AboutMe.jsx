@@ -14,16 +14,16 @@ const AboutMe = () => {
       <div className='flex'>
          <Sidebar>
             <SidebarSection sectionName='about-me'>
-               <div className='p-2 text-sm border-b border-border nav-active'>
-                  <NavLink className='details cursor-pointer' to='/about-me/education'>
+               <div className='py-5 px-6 text-sm border-b border-border nav-active'>
+                  <NavLink className='mb-4 details cursor-pointer' to='/about-me/education'>
                      <FontAwesomeIcon icon={faFolder} className='text-orange-400' />
                      <p className='ml-2'>education</p>
                   </NavLink>
-                  <NavLink className='mt-2 details cursor-pointer' to='/about-me/skills'>
+                  <NavLink className='mb-4 details cursor-pointer' to='/about-me/skills'>
                      <FontAwesomeIcon icon={faFolder} className='text-green-400' />
                      <p className='ml-2'>skills</p>
                   </NavLink>
-                  <NavLink className='mt-2 details cursor-pointer' to='/about-me/experience'>
+                  <NavLink className='mb-4 details cursor-pointer' to='/about-me/experience'>
                      <FontAwesomeIcon icon={faFolder} className='text-teal-400' />
                      <p className='ml-2'>experience</p>
                   </NavLink>
