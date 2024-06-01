@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClose } from '@fortawesome/free-solid-svg-icons'
+import { faClose, faCommentDots, faStar } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 const Description = ({ children, sectionName }) => {
+   const [detailsOpen, setDetailsOpen] = useState(false)
+
    return (
       <div className='page-height flex w-full'>
          <div className='w-1/2 border-r border-border'>
@@ -50,7 +52,7 @@ const Description = ({ children, sectionName }) => {
                <div className='col-span-10 text-green-500 '>{children}</div>
             </div>
          </div>
-         <div className='w-1/2 py-4 px-6'>
+         <div className='w-1/2 py-4 px-6 overflow-y-scroll'>
             <p>// Code snippet showcase:</p>
             <div className='mt-8 text-sm'>
                <div className='flex'>
@@ -60,19 +62,94 @@ const Description = ({ children, sectionName }) => {
                      width={40}
                      className='rounded-full'
                   />
-                  <div className='flex justify-between w-full'>
-                     <div className='ml-3'>
-                        <Link className='text-blue-500 font-bold cursor-pointer' to={'https://github.com/rohithrajb'} target='_blank'>@rohithrajb</Link>
-                        <p>Created 4 months ago</p>
+                  <div className='ml-3 w-full'>
+                     <div className='flex justify-between'>
+                        <Link
+                           to={'https://github.com/rohithrajb'}
+                           target='_blank'
+                           className='text-blue-500 font-bold cursor-pointer hover:text-blue-400 '>
+                           @rohithrajb
+                        </Link>
+                        <div className='flex items-center'>
+                           <FontAwesomeIcon icon={faCommentDots} />
+                           <p
+                              className='ml-2 hover:text-white cursor-pointer'
+                              onClick={() => setDetailsOpen((detailsOpen) => !detailsOpen)}>
+                              details
+                           </p>
+                           <FontAwesomeIcon icon={faStar} className='ml-3' />
+                           <div className='ml-2 hover:text-white cursor-pointer'>stars</div>
+                        </div>
                      </div>
-                     <div className=''>details</div>
+                     <p>Created 4 months ago</p>
                   </div>
                </div>
-               <div className='mt-3 border border-border bg-dark rounded-xl p-4'>
-                  <p>
-                     const hello = rohithrajb
-                  </p>
+               <pre className='mt-3 border border-border bg-dark rounded-xl p-4 overflow-x-scroll max-h-52'>
+                  <code>
+                     {`if (selectedFilters.length > 0) {
+   let tempProjects = []
+   selectedFilters.map((eachFilter) => {
+      let temp = projects.filter(
+         (project) => !tempProjects.flat().includes(project) 
+         && project.tech.includes(eachFilter)
+      )
+      tempProjects.push(temp)
+   })
+   setFilteredProjects(tempProjects.flat())
+}
+else {
+   setFilteredProjects([...projects])
+}`}
+                  </code>
+               </pre>
+               {detailsOpen && (
+                  <div className='mt-3 pt-3 border-t border-border'>
+                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                  </div>
+               )}
+               <div className='flex mt-8'>
+                  <img
+                     src='https://github.com/rohithrajb.png'
+                     alt=''
+                     width={40}
+                     className='rounded-full'
+                  />
+                  <div className='ml-3 w-full'>
+                     <div className='flex justify-between'>
+                        <Link
+                           to={'https://github.com/rohithrajb'}
+                           target='_blank'
+                           className='text-blue-500 font-bold cursor-pointer hover:text-blue-400'>
+                           @rohithrajb
+                        </Link>
+                        <div className='flex items-center'>
+                           <FontAwesomeIcon icon={faCommentDots} />
+                           <p className='ml-2 hover:text-white cursor-pointer'>details</p>
+                           <FontAwesomeIcon icon={faStar} className='ml-3' />
+                           <div className='ml-2 hover:text-white cursor-pointer'>stars</div>
+                        </div>
+                     </div>
+                     <p>Created 4 months ago</p>
+                  </div>
                </div>
+               <pre className='mt-3 border border-border bg-dark rounded-xl p-4 overflow-x-scroll max-h-52'>
+                  <code>
+                     {`if (selectedFilters.length > 0) {
+   let tempProjects = []
+   selectedFilters.map((eachFilter) => {
+      let temp = projects.filter(
+         (project) => !tempProjects.flat().includes(project) 
+         && project.tech.includes(eachFilter)
+      )
+      tempProjects.push(temp)
+   })
+   setFilteredProjects(tempProjects.flat())
+}
+else {
+   setFilteredProjects([...projects])
+}`}
+                  </code>
+               </pre>
             </div>
          </div>
       </div>

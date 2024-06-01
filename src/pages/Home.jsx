@@ -18,7 +18,7 @@ const Home = () => {
                <h2 className='text-3xl text-blue-600 mt-2 title'>&gt; Front-end developer</h2>
                <p className='text-main mt-10 github'>
                   // try the game out <br />
-                  // you can find it my github
+                  // you can find it in my github
                </p>
                <div>
                   <span className='text-blue-600'>const </span>
