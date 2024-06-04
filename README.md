@@ -2,6 +2,8 @@ This IDE-inspired website design is a work of Yanka Darelova (https://www.figma.
 
 Thanks for making such beautiful work public.
 
+I'm proud of this project as it truly highlights my ability to make pixel-perfect frontend.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
